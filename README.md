@@ -1,200 +1,194 @@
-# Shivora Fashion — E-Commerce Web Application
+# Shivora Fashion — Full-Stack E-Commerce Web Application
 
-A full-stack fashion e-commerce website built using the MERN stack (MongoDB, Express, React, Node.js). The app allows users to browse products, manage a cart and wishlist, create accounts, and place orders — with email notifications on contact form submissions.
-
----
-
-## What This Project Does
-
-- Users can browse fashion products fetched from a database
-- They can add items to a cart or wishlist
-- They must log in before checking out (protected route)
-- Orders are saved to the database on successful checkout
-- A contact form sends an email notification using the Resend API
-- All user passwords are securely hashed and inputs are validated
+Shivora is a modern, responsive fashion e-commerce web application built on the MERN stack (MongoDB, Express, React, and Node.js). The platform delivers a premium shopping experience featuring interactive fashion catalogs, customer authentication, dynamic cart and wishlist management, checkout processing, and contact form handling with automated email notifications.
 
 ---
 
-## Tech Stack
+## Core Capabilities
 
-| Part | Technology Used |
-|------|----------------|
-| Frontend | React 18, React Router v6, Context API, CSS |
-| Backend | Node.js with Express.js |
-| Database | MongoDB (via Mongoose) |
-| Authentication | JWT (JSON Web Tokens) + bcryptjs |
-| Email | Resend API |
-| Input Validation | express-validator |
+- **Catalog and Shop Browsing**: Explore styled fashion categories, filterable collections, and dedicated product details pages loaded dynamically from a MongoDB database.
+- **Cart and Wishlist Systems**: Manage selected items through a React Context-powered cart and wishlist with automatic state updates and local persistence options.
+- **Authentication**: Customer registration, sign-in, and session management integrated with Clerk Authentication alongside custom backend route protection.
+- **Transaction Processing**: Secure order checkout system that registers orders in the database for authenticated users.
+- **Transactional Emails**: Submitting the contact form registers the message in the database and automatically triggers a notification email using the Resend API.
+- **Data Integrity and Security**: Implement server-side input validation and sanitization using express-validator, password hashing via bcryptjs, and environment separation for secrets.
 
 ---
 
-## Before You Start — What You Need Installed
+## Technical Architecture
 
-1. **Node.js** (version 16 or higher) — [Download here](https://nodejs.org)
-2. **MongoDB** — either running locally on port `27017`, or a free cloud instance via [MongoDB Atlas](https://www.mongodb.com/atlas)
-3. **A Resend account** — for email functionality — [Sign up at resend.com](https://resend.com)
+### Tech Stack
+
+| Component | Technologies | Description |
+|-----------|--------------|-------------|
+| Frontend | React 18, React Router v6, Context API, Vanilla CSS | Responsive UI, state management, and declarative routing |
+| Backend | Node.js, Express.js (v5) | RESTful API routing, middleware integration, and business logic |
+| Authentication | Clerk Authentication, JWT, bcryptjs | Hybrid identity verification and secure route containment |
+| Database | MongoDB, Mongoose | Document-based schema definitions and data storage |
+| Email Service | Resend API | Transactional mailing capabilities |
+| Validation | express-validator | Request payload inspection and sanitation |
 
 ---
 
-## Setting Up Environment Variables
+## Prerequisites
 
-### Backend (`backend/.env`)
+Before setting up the project locally, ensure you have the following software installed:
 
-Create a file called `.env` inside the `backend/` folder and add the following:
+- **Node.js**: Version 18.0 or newer
+- **MongoDB**: A local instance running on port 27017, or a connection string to a MongoDB Atlas cluster
+- **Clerk Account**: Access keys for user authentication services
+- **Resend Account**: An API key for dispatching notification emails
 
-```
+---
+
+## Configuration
+
+You must set up environment files for both the server and client components.
+
+### Backend Configuration
+
+Create a file named `.env` in the `backend` directory:
+
+```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/shivora
-JWT_SECRET=your_strong_secret_key_here
+MONGO_URI=mongodb://127.0.0.1:27017/shivora
+JWT_SECRET=your_jwt_signing_key_here
 CLIENT_URL=http://localhost:3000
-RESEND_API_KEY=re_your_resend_key_here
+RESEND_API_KEY=re_your_resend_api_key_here
 ```
 
-> If you're using MongoDB Atlas instead of a local database, replace the MONGO_URI line with your Atlas connection string:
-> `MONGO_URI=mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/shivora`
+Adjust `MONGO_URI` to use your Atlas connection string if you are deploying to or testing on the cloud.
 
-> **Important:** Never share or upload this file — it's already excluded from Git via `.gitignore`.
+### Frontend Configuration
 
-### Frontend (`frontend/.env`)
+Create a file named `.env` in the `frontend` directory:
 
-The frontend `.env` file is already set up for local development:
-
-```
+```env
 REACT_APP_API_URL=http://localhost:5000
+REACT_APP_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key_here
 ```
 
-Update this URL if you deploy the project to a live server.
+Ensure the Clerk key matches your project settings in the Clerk dashboard.
 
 ---
 
-## How to Run the Project
+## Installation and Execution
 
-### Step 1 — Install Dependencies
+Follow these steps to configure, populate, and run the project locally.
 
-Open a terminal and run these commands:
+### 1. Install Dependencies
+
+Install packages in both the backend and frontend directories:
 
 ```bash
-# Install backend dependencies
+# Install backend packages
 cd backend
 npm install
 
-# Install frontend dependencies
+# Install frontend packages
 cd ../frontend
 npm install
 ```
 
-### Step 2 — Seed the Database
+### 2. Populate Sample Data
 
-This step adds sample products and a test user account to MongoDB:
+Run the database seed script to populate MongoDB with initial collections and products:
 
 ```bash
-cd backend
+cd ../backend
 node seed.js
 ```
 
-You should see this output confirming it worked:
-```
-MongoDB connected
-Products seeded successfully
-```
+Upon success, you should see confirmation logs indicating the connection was established and the database populated.
 
-### Step 3 — Start the Servers
+### 3. Run the Development Servers
 
-You'll need two terminal windows open at the same time.
+Start the backend and frontend development servers in separate terminal windows.
 
-**Terminal 1 — Start the backend:**
+#### Start Backend
 ```bash
 cd backend
 npm run dev
 ```
-This runs on: `http://localhost:5000`
+The server will boot on `http://localhost:5000`.
 
-**Terminal 2 — Start the frontend:**
+#### Start Frontend
 ```bash
 cd frontend
 npm start
 ```
-This runs on: `http://localhost:3000`
-
-Now open your browser and go to **`http://localhost:3000`** to see the app.
+The React development server will launch on `http://localhost:3000`. Open your browser and navigate to `http://localhost:3000` to interact with the application.
 
 ---
 
-## Test Credentials (Pre-Seeded Account)
-
-| Field | Value |
-|-------|-------|
-| Email | `evaluator@shivora.com` |
-| Password | `password123` |
-
-This account is automatically created when you run `node seed.js`.
-
----
-
-## Testing Each Feature
-
-| Feature | How to Test |
-|---------|-------------|
-| Register | Go to `/register` and create a new account |
-| Login | Go to `/login` and sign in |
-| Protected Checkout | Visit `/checkout` while logged out — you'll be redirected to `/login` |
-| Place an Order | Add items to your cart, log in, and complete checkout — the order saves to MongoDB |
-| Contact Form | Fill in and submit the form at `/contact` — saved to DB and an email is triggered |
-| Product Listing | Products load from MongoDB; if the API is offline, static fallback data is shown |
-
----
-
-## Project Folder Structure
+## Project Structure
 
 ```
 shivora/
 ├── backend/
 │   ├── config/
-│   │   └── db.js                 # Handles MongoDB connection
+│   │   └── db.js                 # Database connection management
 │   ├── middleware/
-│   │   └── authMiddleware.js     # Checks JWT token on protected routes
+│   │   └── authMiddleware.js     # Route protection and token validation
 │   ├── models/
-│   │   ├── User.js               # User data structure
-│   │   ├── Product.js            # Product data structure
-│   │   ├── Contact.js            # Contact form submissions
-│   │   └── Order.js              # Order data structure
+│   │   ├── User.js               # User profiles and credentials
+│   │   ├── Product.js            # Product listings and inventory schemas
+│   │   ├── Contact.js            # Contact submissions database log
+│   │   └── Order.js              # Checkout orders record
 │   ├── routes/
-│   │   ├── authRoutes.js         # Register, Login, Get current user
-│   │   ├── productRoutes.js      # Fetch all products
-│   │   ├── contactRoutes.js      # Contact form + Resend email trigger
-│   │   └── orderRoutes.js        # Place order (requires login)
-│   ├── server.js                 # Main Express app entry point
-│   ├── seed.js                   # Populates DB with sample data
-│   ├── .env                      # Your secret config (not committed to Git)
-│   └── .env.example              # Template showing which variables are needed
+│   │   ├── authRoutes.js         # Register, Login, and Session management
+│   │   ├── productRoutes.js      # Public product queries
+│   │   ├── contactRoutes.js      # Contact logging and Resend integrations
+│   │   └── orderRoutes.js        # Checkout handling
+│   ├── seed.js                   # Mock data generation and insertion script
+│   └── server.js                 # Express server configuration and middleware initialization
 │
 ├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── ProtectedRoute/   # Redirects logged-out users away from checkout
-│   │   ├── context/
-│   │   │   ├── AuthContext.js    # Manages logged-in user state
-│   │   │   ├── CartContext.js    # Manages cart items
-│   │   │   ├── WishlistContext.js
-│   │   │   └── ProductsContext.js
-│   │   ├── pages/
-│   │   │   ├── Checkout/         # Checkout page — saves order to DB
-│   │   │   ├── Contact/          # Contact page — sends email via Resend
-│   │   │   ├── Login/
-│   │   │   └── Register/
-│   │   └── App.jsx               # Main routes file
-│   └── .env                      # Frontend API URL config
-│
-└── README.md
+│   ├── public/
+│   │   └── index.html            # Core document template
+│   └── src/
+│       ├── assets/               # Styled product assets and graphics
+│       ├── components/           # Reusable components (Navbar, Footer, Product Cards)
+│       ├── context/              # Cart, Wishlist, Products, and Authentication state hooks
+│       ├── pages/                # Application page views
+│       │   ├── About             # Company bio and information
+│       │   ├── Cart              # Active checkout basket
+│       │   ├── Checkout          # Billing information and purchase finalization
+│       │   ├── Collections       # Grouped style categories
+│       │   ├── Contact           # Customer contact and query form
+│       │   ├── Home              # Hero banner and featured item display
+│       │   ├── Login             # Customer sign-in page
+│       │   ├── MyOrders          # Historical order history tracking
+│       │   ├── NotFound          # Custom 404 handler
+│       │   ├── ProductDetail     # Detailed specification and cart actions
+│       │   ├── Register          # New customer registration
+│       │   ├── Shop              # Filterable search catalog
+│       │   └── Wishlist          # Saved-for-later collection list
+│       ├── App.jsx               # Client routes and navigation logic
+│       └── index.js              # Application renderer and provider bindings
+└── README.md                     # Documentation
 ```
 
 ---
 
-## Security Measures Implemented
+## Feature Tour and Testing Verification
 
-- `.env` files are excluded from Git so secrets are never exposed
-- JWT secret is a 256-bit cryptographically random key
-- Passwords are hashed using `bcryptjs` before being stored
-- All form inputs are validated and sanitised using `express-validator`
-- CORS is restricted to only allow requests from the configured frontend URL
-- The order placement route is protected — only logged-in users can access it
+| Interface / Component | Verification Steps |
+|-----------------------|--------------------|
+| User Registration | Navigate to `/register` and submit the registration form. Check your database to verify the user entry was added. |
+| User Login | Sign in via `/login`. Check that a valid session is registered. |
+| Shop Catalog | Visit `/shop` to view loaded items. The shop reads dynamically from MongoDB, with visual fallbacks implemented if the backend is unreachable. |
+| Cart and Wishlist | Click on product cards to add them to your wishlist or cart. The UI updates the counts instantly across the header navigation. |
+| Protected Checkout | Attempt to access `/checkout` directly while signed out. The middleware will redirect you to the login screen. Log in to access the checkout and submit an order. |
+| Order Auditing | After checking out, visit the `/my-orders` page to verify that your order has been saved and is listed in your order history. |
+| Contact form and Emails | Fill out the form at `/contact` and submit. Confirm that a record is saved to the database and check your inbox for the notification email if Resend is configured. |
+
+---
+
+## Security Practices
+
+- **Strict CORS Rules**: Configured to reject cross-origin requests outside the specified frontend origin domain.
+- **Password Encryption**: Employs bcryptjs with auto-generated salts to hash credentials before database writes.
+- **Access Token Verification**: Protected REST API endpoints require valid JSON Web Tokens (JWT) or Clerk credentials to fetch details.
+- **Server-Side Sanitation**: Inputs undergo strict format checks and sanitation via `express-validator` to protect the backend from malicious payloads and injection vectors.
+- **Environment Isolation**: Sensitive settings, ports, database URIs, and mail credentials reside purely in localized `.env` files, which are ignored by Git.

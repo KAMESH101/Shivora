@@ -12,29 +12,30 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 80px 20px;
+  padding: clamp(80px, 15vh, 140px) 16px clamp(40px, 8vh, 80px);
+  width: 100%;
 }
 
 .not-found__number {
   font-family: var(--font-display);
-  font-size: clamp(6rem, 20vw, 12rem);
+  font-size: clamp(5rem, 18vw, 10rem);
   font-weight: 300;
   color: var(--primary);
   line-height: 1;
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .not-found__title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 400;
   color: var(--text-dark);
 }
 
 .not-found__sub {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   color: var(--text-medium);
-  max-width: 400px;
+  max-width: 440px;
   line-height: 1.8;
 }
 
@@ -44,4 +45,12 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 12px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .not-found__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

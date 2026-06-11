@@ -1,14 +1,14 @@
 /* About Page Styles */
-/* I am still learning CSS so some things might not be perfect */
 
 .about-page {
   min-height: 100vh;
+  background: var(--bg);
 }
 
 /* top banner */
 .about-top {
   position: relative;
-  height: 70vh;
+  height: clamp(350px, 60vh, 600px);
   display: flex;
   align-items: center;
 }
@@ -20,15 +20,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* I learned about brightness filter from MDN docs */
-  filter: brightness(0.5);
+  filter: brightness(0.45);
 }
 
 .about-top-text {
   position: relative;
   z-index: 1;
-  padding: 0 40px;
-  padding-top: 80px;
+  padding: 80px clamp(16px, 4vw, 64px) 0;
+  max-width: 100%;
 }
 
 .about-small-label {
@@ -41,25 +40,26 @@
 
 .about-heading {
   font-family: var(--font-display);
-  font-size: 3rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   color: white;
   margin-bottom: 15px;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .about-subtext {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.75);
   max-width: 450px;
+  line-height: 1.7;
 }
 
 /* mission section */
 .about-mission {
   display: flex;
-  gap: 60px;
+  gap: clamp(32px, 6vw, 80px);
   align-items: center;
-  padding: 80px 40px;
-  max-width: 1280px;
+  padding: clamp(40px, 8vh, 80px) clamp(16px, 4vw, 64px);
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
@@ -68,13 +68,14 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
 }
 
 .about-mission-title {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
   color: var(--text-dark);
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .about-mission-para {
@@ -83,19 +84,21 @@
   line-height: 1.8;
 }
 
-/* I tried to match the button from Button component styling */
 .about-shop-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--primary);
   color: white;
-  padding: 14px 32px;
-  border-radius: 30px;
+  padding: 0 32px;
+  border-radius: var(--radius-full);
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   width: fit-content;
-  transition: background 0.3s;
+  transition: all var(--transition);
+  min-height: 48px;
 }
 
 .about-shop-btn:hover {
@@ -106,7 +109,8 @@
 .about-mission-images {
   flex: 1;
   position: relative;
-  height: 480px;
+  height: clamp(320px, 40vw, 480px);
+  min-width: 0;
 }
 
 .about-img-1 {
@@ -116,8 +120,8 @@
   width: 65%;
   height: 68%;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
 
 .about-img-2 {
@@ -127,23 +131,22 @@
   width: 55%;
   height: 58%;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  /* white border so it looks like it is on top */
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   border: 4px solid var(--bg);
   z-index: 1;
 }
 
 /* values section */
 .about-values-section {
-  background: #f0ebe4;
-  padding: 80px 40px;
+  background: var(--bg-secondary);
+  padding: clamp(48px, 8vh, 80px) clamp(16px, 4vw, 64px);
   text-align: center;
 }
 
 .about-values-title {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: var(--text-dark);
   margin-bottom: 40px;
   margin-top: 8px;
@@ -152,32 +155,33 @@
 .about-values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1280px;
+  gap: clamp(16px, 2.5vw, 24px);
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
 .about-value-box {
   background: white;
-  padding: 30px 20px;
-  border-radius: 16px;
-  /* I added hover using transition */
-  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 32px 24px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
 }
 
 .about-value-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .about-value-icon {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--primary);
   margin-bottom: 14px;
 }
 
 .about-value-name {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-dark);
   margin-bottom: 10px;
   font-weight: 600;
@@ -190,48 +194,33 @@
 }
 
 /* ---- responsive ---- */
-/* learned about media queries from a youtube tutorial */
-
 @media (max-width: 900px) {
   .about-mission {
     flex-direction: column;
-    padding: 50px 24px;
+    padding: 48px 16px;
     gap: 40px;
   }
 
   .about-mission-images {
     width: 100%;
-    height: 320px;
+    height: 360px;
   }
 
   .about-values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .about-heading {
-    font-size: 2rem;
-  }
 }
 
 @media (max-width: 550px) {
   .about-top-text {
-    padding: 0 20px;
-    padding-top: 80px;
+    padding: 60px 16px 0;
   }
 
   .about-values-section {
-    padding: 50px 20px;
+    padding: 40px 16px;
   }
 
   .about-values-grid {
     grid-template-columns: 1fr;
-  }
-
-  .about-heading {
-    font-size: 1.6rem;
-  }
-
-  .about-mission-title {
-    font-size: 1.6rem;
   }
 }

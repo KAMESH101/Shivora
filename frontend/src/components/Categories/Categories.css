@@ -5,14 +5,14 @@
 
 .categories__header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: clamp(32px, 6vh, 48px);
 }
 
 .categories__grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
   grid-template-rows: 400px;
-  gap: 16px;
+  gap: clamp(12px, 2vw, 20px);
 }
 
 .categories__card {
@@ -35,7 +35,7 @@
 }
 
 .categories__card:hover .categories__card-img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 .categories__card-overlay {
@@ -44,7 +44,7 @@
   background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
   display: flex;
   align-items: flex-end;
-  padding: 24px;
+  padding: clamp(16px, 3vw, 24px);
   transition: background var(--transition);
 }
 
@@ -74,8 +74,8 @@
 }
 
 .categories__card-arrow {
-  width: 36px;
-  height: 36px;
+  width: 44px; /* Touch target min width */
+  height: 44px; /* Touch target min height */
   background: var(--primary);
   border-radius: 50%;
   display: flex;
@@ -118,6 +118,6 @@
 
   .categories__card--featured {
     grid-column: span 1;
-    height: 320px;
+    height: 300px;
   }
 }

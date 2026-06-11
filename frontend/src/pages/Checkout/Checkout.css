@@ -34,6 +34,13 @@
   box-sizing: border-box;
 }
 
+/* Left form column */
+.checkout-main-form {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* Card layout */
 .checkout-card {
   background: white;
@@ -82,6 +89,7 @@
 }
 
 .checkout-input {
+  width: 100%;
   font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--text-dark);
@@ -91,6 +99,7 @@
   background: var(--bg);
   outline: none;
   transition: all var(--transition);
+  box-sizing: border-box;
 }
 
 .checkout-input:focus {
@@ -132,6 +141,8 @@
   cursor: pointer;
   background: white;
   transition: all var(--transition);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .payment-option:hover {
@@ -178,6 +189,8 @@
   gap: 16px;
   margin-top: -8px;
   animation: slideDown 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @keyframes slideDown {
@@ -562,5 +575,16 @@
   }
   .checkout-page-title {
     font-size: 2rem;
+  }
+  .payment-subform {
+    padding: 16px 12px;
+  }
+  .payment-option {
+    padding: 14px 12px;
+    gap: 12px;
+  }
+  .place-order-submit-btn {
+    padding: 16px;
+    font-size: 0.82rem;
   }
 }

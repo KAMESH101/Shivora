@@ -8,7 +8,7 @@ import './Home.css';
 const BrandBanner = () => (
   <section className="brand-banner">
     <div className="brand-banner__track">
-      {['Free Shipping Over $100', '✦', 'New Collection 2025', '✦', 'Returns Within 30 Days', '✦', 'Sustainable Fashion', '✦', 'Free Shipping Over $100', '✦', 'New Collection 2025', '✦', 'Returns Within 30 Days', '✦', 'Sustainable Fashion', '✦'].map((text, i) => (
+      {['Free Shipping Over ₹2999', '✦', 'New Collection 2026', '✦', 'Returns Within 30 Days', '✦', 'Sustainable Fashion', '✦', 'Free Shipping Over ₹2999', '✦', 'New Collection 2026', '✦', 'Returns Within 30 Days', '✦', 'Sustainable Fashion', '✦'].map((text, i) => (
         <span key={i} className="brand-banner__item">{text}</span>
       ))}
     </div>

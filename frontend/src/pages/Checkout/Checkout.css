@@ -428,6 +428,10 @@
 .detail-val {
   font-weight: 600;
   color: var(--text-dark);
+  text-align: right;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  max-width: 65%;
 }
 
 .detail-val.highlight {

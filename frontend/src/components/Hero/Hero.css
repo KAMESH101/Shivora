@@ -157,10 +157,10 @@
 .hero__image-frame::before {
   content: '';
   position: absolute;
-  top: -16px;
-  left: -16px;
-  right: 16px;
-  bottom: 16px;
+  top: -12px;
+  left: -12px;
+  right: 12px;
+  bottom: 12px;
   border: 2px solid var(--primary);
   border-radius: var(--radius-md);
   opacity: 0.3;
@@ -181,7 +181,7 @@
 .hero__image-tag {
   position: absolute;
   bottom: 24px;
-  left: -24px;
+  left: 0;
   background: white;
   padding: 12px 20px;
   border-radius: var(--radius-sm);

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+:root {
+  /* Rose-Gold primary */
+  --primary: #c4856a;
+  --primary-dark: #a86e56;
+  --primary-light: #d9a992;
+  --primary-pale: #fde8e0;
+
+  /* Warm amber accent */
+  --accent: #d4a06a;
+  --accent-dark: #c08b55;
+
+  /* Warm Ivory / Cream backgrounds */
+  --bg: #fdf8f3;
+  --bg-secondary: #f7efe5;
+  --bg-dark: #1e1612;
+
+  /* Text */
+  --text-dark: #2a1f1a;
+  --text-medium: #5c4f48;
+  --text-light: #9e8e85;
+  --text-white: #ffffff;
+
+  /* Borders & Shadows */
+  --border: #e8ddd3;
+  --shadow-sm: 0 2px 8px rgba(100,60,40,0.07);
+  --shadow-md: 0 8px 24px rgba(100,60,40,0.11);
+  --shadow-lg: 0 20px 60px rgba(100,60,40,0.16);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 30px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Poppins', sans-serif;
+  --transition: 0.3s ease;
+  --max-width: 1280px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 64px);
+}
+
+/* Utility classes */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}

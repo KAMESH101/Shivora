@@ -4,15 +4,14 @@
   justify-content: center;
   gap: 8px;
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-lg);
   transition: all var(--transition);
   white-space: nowrap;
   cursor: pointer;
   border: 2px solid transparent;
-  min-height: 44px; /* Compliant touch target */
 }
 
 .btn--full {
@@ -21,21 +20,18 @@
 
 /* Sizes */
 .btn--sm {
-  font-size: 0.72rem;
-  padding: 0 20px;
-  min-height: 44px;
+  font-size: 0.7rem;
+  padding: 10px 24px;
 }
 
 .btn--md {
   font-size: 0.8rem;
-  padding: 0 36px;
-  min-height: 48px;
+  padding: 16px 40px;
 }
 
 .btn--lg {
   font-size: 0.85rem;
-  padding: 0 48px;
-  min-height: 54px;
+  padding: 20px 60px;
 }
 
 /* Variants */
@@ -43,14 +39,14 @@
   background: var(--primary);
   color: var(--text-white);
   border-color: var(--primary);
-  box-shadow: 0 4px 20px rgba(196, 133, 106, 0.25);
+  box-shadow: 0 4px 20px rgba(196, 133, 106, 0.35);
 }
 
 .btn--primary:hover {
   background: var(--primary-dark);
   border-color: var(--primary-dark);
-  box-shadow: 0 6px 24px rgba(196, 133, 106, 0.4);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(196, 133, 106, 0.45);
+  transform: translateY(-2px);
 }
 
 .btn--secondary {
@@ -62,7 +58,7 @@
 .btn--secondary:hover {
   background: var(--primary);
   color: var(--text-white);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn--dark {
@@ -72,9 +68,8 @@
 }
 
 .btn--dark:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  transform: translateY(-1px);
+  background: #333;
+  transform: translateY(-2px);
 }
 
 .btn--ghost {
@@ -86,13 +81,4 @@
 .btn--ghost:hover {
   background: var(--text-white);
   color: var(--text-dark);
-  transform: translateY(-1px);
-}
-
-@media (max-width: 480px) {
-  .btn--lg {
-    padding: 0 32px;
-    font-size: 0.8rem;
-    min-height: 48px;
-  }
 }

@@ -42,7 +42,7 @@
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  height: clamp(300px, 45vh, 400px);
+  height: 400px;
   cursor: pointer;
 }
 
@@ -60,11 +60,11 @@
 .promo-section__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%, transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 50%, transparent);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(20px, 4vw, 32px);
+  padding: 32px;
 }
 
 .promo-section__tag {
@@ -87,20 +87,17 @@
 .promo-section__link {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 1px;
   color: white;
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.2);
-  padding: 0 24px;
+  padding: 10px 20px;
   border-radius: var(--radius-full);
   transition: all var(--transition);
   width: fit-content;
-  min-height: 44px; /* Touch target min-height */
 }
 
 .promo-section__link:hover {
@@ -125,7 +122,7 @@
 
 .testimonials__header {
   text-align: center;
-  margin-bottom: clamp(32px, 6vh, 48px);
+  margin-bottom: 48px;
 }
 
 .testimonials__grid {
@@ -137,13 +134,12 @@
 .testimonial-card {
   background: white;
   border-radius: var(--radius-md);
-  padding: clamp(24px, 4vw, 32px);
+  padding: 32px;
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition);
+  transition: box-shadow var(--transition);
   display: flex;
   flex-direction: column;
   gap: 16px;
-  min-width: 0;
 }
 
 .testimonial-card:hover {
@@ -197,7 +193,7 @@
 
 @media (max-width: 900px) {
   .testimonials__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 }
 

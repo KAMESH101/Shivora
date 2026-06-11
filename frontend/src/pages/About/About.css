@@ -27,8 +27,7 @@
 .about-top-text {
   position: relative;
   z-index: 1;
-  padding: 0 40px;
-  padding-top: 80px;
+  padding: 80px clamp(16px, 4vw, 40px) 0;
 }
 
 .about-small-label {
@@ -58,9 +57,11 @@
   display: flex;
   gap: 60px;
   align-items: center;
-  padding: 80px 40px;
+  padding: 80px clamp(16px, 4vw, 40px);
   max-width: 1280px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-mission-text {
@@ -137,7 +138,7 @@
 /* values section */
 .about-values-section {
   background: #f0ebe4;
-  padding: 80px 40px;
+  padding: 80px clamp(16px, 4vw, 40px);
   text-align: center;
 }
 
@@ -155,6 +156,8 @@
   gap: 20px;
   max-width: 1280px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-value-box {

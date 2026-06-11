@@ -2,6 +2,11 @@
 
 Shivora is a modern, responsive fashion e-commerce web application built on the MERN stack (MongoDB, Express, React, and Node.js). The platform delivers a premium shopping experience featuring interactive fashion catalogs, customer authentication, dynamic cart and wishlist management, checkout processing, and contact form handling with automated email notifications.
 
+## Live Deployment Links
+
+- **Production Frontend**: [https://shivora-fashion.vercel.app](https://shivora-fashion.vercel.app)
+- **Production Backend**: [https://backend-alpha-seven-60.vercel.app](https://backend-alpha-seven-60.vercel.app)
+
 ---
 
 ## Core Capabilities

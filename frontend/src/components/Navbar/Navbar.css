@@ -182,7 +182,8 @@
 }
 
 .navbar__mobile-menu--open {
-  max-height: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
   padding: 16px 0 24px;
   border-top-color: var(--border);
 }

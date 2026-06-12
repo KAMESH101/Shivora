@@ -251,10 +251,16 @@
   .hero__inner {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 40px;
   }
 
   .hero__image-wrap {
-    display: none;
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .hero__image {
+    height: 400px;
   }
 
   .hero__sub {

@@ -157,7 +157,7 @@ function SearchOverlay({ isOpen, onClose }) {
                       <div className="search-result-info">
                         <p className="search-result-category">{product.category}</p>
                         <p className="search-result-name">{product.name}</p>
-                        <p className="search-result-price">${product.price.toFixed(2)}</p>
+                        <p className="search-result-price">₹{product.price.toFixed(2)}</p>
                       </div>
                     </div>
                   );

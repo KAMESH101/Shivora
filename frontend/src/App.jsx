@@ -37,6 +37,13 @@ function ScrollToTop() {
   return null;
 }
 
+import FAQ from './pages/FAQ/FAQ';
+import Shipping from './pages/Shipping/Shipping';
+import SizeGuide from './pages/SizeGuide/SizeGuide';
+import Careers from './pages/Careers/Careers';
+import Press from './pages/Press/Press';
+import Sustainability from './pages/Sustainability/Sustainability';
+
 function App() {
   return (
     <ClerkProvider publishableKey={clerkPubKey}>
@@ -60,6 +67,15 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/my-orders" element={<ProtectedRoute><MyOrders /></ProtectedRoute>} />
+                
+                {/* Generic Pages */}
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/shipping" element={<Shipping />} />
+                <Route path="/size-guide" element={<SizeGuide />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/press" element={<Press />} />
+                <Route path="/sustainability" element={<Sustainability />} />
+                
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <Footer />

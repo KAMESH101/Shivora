@@ -213,22 +213,32 @@
   .shop-sidebar {
     position: static;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     gap: 16px;
     padding: 20px;
     background: white;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .shop-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shop-sidebar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .shop-sidebar__section {
     border-bottom: none;
     padding-bottom: 0;
     min-width: 160px;
+    flex-shrink: 0;
   }
-}
 
-@media (max-width: 480px) {
   .shop-grid {
     grid-template-columns: 1fr;
   }

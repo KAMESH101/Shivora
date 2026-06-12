@@ -344,6 +344,14 @@
   background: var(--primary-dark);
 }
 
+.navbar__mobile-user-greeting {
+  color: var(--primary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+  padding-bottom: 14px;
+}
+
 /* mobile logout button */
 .navbar__mobile-logout {
   width: 100%;

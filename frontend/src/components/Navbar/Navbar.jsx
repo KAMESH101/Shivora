@@ -190,6 +190,11 @@ function Navbar() {
             {isLoggedIn ? (
               <>
                 <li>
+                  <div className="navbar__mobile-link navbar__mobile-user-greeting">
+                    Hi, {user?.name?.split(' ')[0] || 'User'}
+                  </div>
+                </li>
+                <li>
                   <Link to="/my-orders" className="navbar__mobile-link">📦 My Orders</Link>
                 </li>
                 <li>

@@ -1,13 +1,13 @@
 /* ───────── My Orders Page ───────── */
 .my-orders-page {
   min-height: 100vh;
-  background: #faf9f7;
+  background: var(--bg);
   padding-bottom: 80px;
 }
 
 /* ── Header ── */
 .my-orders-header {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #2d2420 100%);
   color: #fff;
   padding: 60px 0 40px;
   margin-bottom: 40px;
@@ -103,7 +103,7 @@
 .my-orders-action-btn {
   display: inline-block;
   padding: 13px 32px;
-  background: #1a1a1a;
+  background: var(--primary);
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
@@ -114,7 +114,7 @@
 }
 
 .my-orders-action-btn:hover {
-  background: #c9a98a;
+  background: var(--primary-dark);
   transform: translateY(-1px);
 }
 
@@ -127,7 +127,7 @@
 
 /* ── Order Card ── */
 .order-card {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 14px;
   border: 1px solid #ede9e3;
   overflow: hidden;
@@ -145,8 +145,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px;
-  background: #f8f5f0;
-  border-bottom: 1px solid #ede9e3;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -250,7 +250,7 @@
   border-radius: 8px;
   overflow: hidden;
   flex-shrink: 0;
-  background: #f0ebe4;
+  background: var(--bg-secondary);
   position: relative;
 }
 
@@ -267,7 +267,7 @@
   align-items: center;
   justify-content: center;
   font-size: 28px;
-  background: #f0ebe4;
+  background: var(--bg-secondary);
 }
 
 /* Item info */
@@ -279,7 +279,7 @@
 .order-item__name {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin: 0 0 6px;
   white-space: nowrap;
   overflow: hidden;
@@ -296,7 +296,7 @@
 .order-item__qty {
   font-size: 12px;
   color: #888;
-  background: #f2ede8;
+  background: var(--bg-secondary);
   padding: 3px 9px;
   border-radius: 99px;
   font-weight: 500;
@@ -312,7 +312,7 @@
 .order-item__subtotal {
   font-size: 16px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-dark);
   white-space: nowrap;
   min-width: 80px;
   text-align: right;
@@ -324,8 +324,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: #f8f5f0;
-  border-top: 1px solid #ede9e3;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -356,7 +356,7 @@
 .order-card__reorder-btn {
   display: inline-block;
   padding: 9px 22px;
-  background: #1a1a1a;
+  background: var(--primary);
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
@@ -367,7 +367,7 @@
 }
 
 .order-card__reorder-btn:hover {
-  background: #c9a98a;
+  background: var(--primary-dark);
   transform: translateY(-1px);
 }
 

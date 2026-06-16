@@ -104,7 +104,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: white;
+  background: var(--card-bg);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-full);
   padding: 10px 18px;
@@ -152,7 +152,7 @@
   padding: 9px 16px;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-full);
-  background: white;
+  background: var(--card-bg);
   color: var(--text-dark);
   cursor: pointer;
   outline: none;
@@ -217,7 +217,7 @@
     overflow-x: auto;
     gap: 16px;
     padding: 20px;
-    background: white;
+    background: var(--card-bg);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     -webkit-overflow-scrolling: touch;

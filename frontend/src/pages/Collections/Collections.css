@@ -27,7 +27,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -97,7 +97,7 @@
 }
 
 .collection-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);

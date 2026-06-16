@@ -91,7 +91,7 @@
 
 /* items */
 .cart-items {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -176,7 +176,7 @@
   height: 30px;
   border-radius: 50%;
   border: 1.5px solid var(--border, #e0d8d0);
-  background: white;
+  background: var(--card-bg);
   font-size: 1rem;
   cursor: pointer;
   display: flex;
@@ -259,7 +259,7 @@
 
 /* summary box */
 .cart-summary {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 28px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);

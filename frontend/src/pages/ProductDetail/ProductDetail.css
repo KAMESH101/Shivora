@@ -228,7 +228,7 @@
   height: 48px;
   border-radius: 8px;
   border: 1.5px solid #e0d8d0;
-  background: white;
+  background: var(--card-bg);
   font-family: var(--font-body);
   font-size: 0.82rem;
   font-weight: 600;
@@ -323,7 +323,7 @@
   height: 52px;
   border-radius: 50%;
   border: 1.5px solid #e0d8d0;
-  background: white;
+  background: var(--card-bg);
   font-size: 1.3rem;
   cursor: pointer;
   transition: all 0.3s;
@@ -387,7 +387,7 @@
 }
 
 .pd-related-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;

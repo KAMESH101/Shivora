@@ -11,7 +11,7 @@ const slides = [
     sub: 'Discover curated fashion that speaks before you do. Premium styles for the modern woman.',
     cta: 'Shop Collection',
     ctaLink: '/shop',
-    bg: 'linear-gradient(135deg, #fdf8f3 0%, #f7efe5 40%, #f0e2d4 100%)',
+    bg: 'var(--hero-bg-1)',
     accentColor: '#c4856a',
     imgUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80',
     imgAlt: 'Fashion model in elegant dress',
@@ -23,7 +23,7 @@ const slides = [
     sub: 'Light fabrics, timeless cuts. Fashion that moves with you through every season.',
     cta: 'Explore Now',
     ctaLink: '/collections',
-    bg: 'linear-gradient(135deg, #fef5ec 0%, #fae3cc 40%, #f5d0b0 100%)',
+    bg: 'var(--hero-bg-2)',
     accentColor: '#d4a06a',
     imgUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80',
     imgAlt: 'Summer fashion lookbook',
@@ -35,11 +35,10 @@ const slides = [
     sub: 'Bold silhouettes and refined details — fashion as art for those who dare.',
     cta: 'View Lookbook',
     ctaLink: '/collections',
-    bg: 'linear-gradient(135deg, #1e1612 0%, #2e1f18 40%, #3d2b20 100%)',
+    bg: 'var(--hero-bg-3)',
     accentColor: '#d9a992',
     imgUrl: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80',
     imgAlt: 'Fashion editorial',
-    dark: true,
   },
 ];
 
@@ -71,7 +70,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`hero ${slide.dark ? 'hero--dark' : ''} ${animating ? 'hero--animating' : ''}`}
+      className={`hero ${animating ? 'hero--animating' : ''}`}
       style={{ background: slide.bg }}
     >
       <div className="hero__bg-decoration" style={{ '--accent': slide.accentColor }} />

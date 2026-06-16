@@ -4,7 +4,7 @@ import { useCart } from '../../context/CartContext';
 import { useWishlist } from '../../context/WishlistContext';
 import './ProductCard.css';
 
-function ProductCard({ product }) {
+function ProductCard({ product, className = '' }) {
   const navigate = useNavigate();
   const { addToCart } = useCart();
   const { toggleWishlist, isWishlisted } = useWishlist();
@@ -34,7 +34,7 @@ function ProductCard({ product }) {
     : null;
 
   return (
-    <div className="product-card" onClick={handleCardClick}>
+    <div className={`product-card ${className}`} onClick={handleCardClick}>
       <div className="product-card__image-wrap">
         {discount && <span className="product-card__badge">-{discount}%</span>}
         {product.isNew && <span className="product-card__badge product-card__badge--new">New</span>}

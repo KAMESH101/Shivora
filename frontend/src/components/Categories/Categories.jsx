@@ -1,12 +1,15 @@
 import React from 'react';
 import { categories } from '../../utils/data';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Categories.css';
 
 const Categories = () => {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+
   return (
-    <section className="categories">
+    <section className="categories" ref={ref}>
       <div className="container">
-        <div className="categories__header">
+        <div className={`categories__header reveal-up ${isVisible ? 'is-visible' : ''}`}>
           <p className="section-subtitle">Explore By</p>
           <h2 className="section-title">Shop by Category</h2>
         </div>
@@ -16,7 +19,7 @@ const Categories = () => {
             <a
               key={cat.id}
               href="/shop"
-              className={`categories__card ${i === 0 ? 'categories__card--featured' : ''}`}
+              className={`categories__card ${i === 0 ? 'categories__card--featured' : ''} reveal-up stagger-${i + 1} ${isVisible ? 'is-visible' : ''}`}
             >
               <img src={cat.image} alt={cat.name} className="categories__card-img" loading="lazy" />
               <div className="categories__card-overlay">

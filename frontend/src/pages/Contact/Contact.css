@@ -29,7 +29,7 @@
 }
 
 .contact-info-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-md);
   padding: 28px 24px;
   box-shadow: var(--shadow-sm);
@@ -93,7 +93,7 @@
 
 /* Form card */
 .contact-form-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-md);
   padding: 40px;
   box-shadow: var(--shadow-sm);
@@ -230,7 +230,7 @@
 
 /* Hours */
 .contact-hours {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-md);
   padding: 32px 28px;
   box-shadow: var(--shadow-sm);

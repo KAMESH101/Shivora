@@ -8,23 +8,7 @@
   padding-top: 80px;
 }
 
-.hero--dark .hero__headline,
-.hero--dark .hero__stat-label,
-.hero--dark .hero__sub {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.hero--dark .hero__headline {
-  color: #ffffff;
-}
-
-.hero--dark .hero__discover {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.hero--dark .hero__discover:hover {
-  color: #fff;
-}
+/* Hero text adapts to theme via CSS variables - no hardcoded overrides needed */
 
 .hero--animating .hero__content,
 .hero--animating .hero__image-wrap {
@@ -117,7 +101,7 @@
   display: flex;
   gap: 32px;
   padding-top: 12px;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  border-top: 1px solid var(--border);
 }
 
 .hero__stat {
@@ -182,7 +166,7 @@
   position: absolute;
   bottom: 24px;
   left: 0;
-  background: white;
+  background: var(--card-bg);
   padding: 12px 20px;
   border-radius: var(--radius-sm);
   font-size: 0.78rem;
@@ -209,7 +193,7 @@
   width: 28px;
   height: 4px;
   border-radius: 2px;
-  background: rgba(0,0,0,0.2);
+  background: var(--border);
   border: none;
   cursor: pointer;
   transition: all var(--transition);

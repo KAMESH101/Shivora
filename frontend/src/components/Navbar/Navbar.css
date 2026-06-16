@@ -10,7 +10,7 @@
 }
 
 .navbar--scrolled {
-  background: rgba(253, 248, 243, 0.96);
+  background: var(--navbar-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 12px 0;
@@ -116,6 +116,10 @@
 .navbar__icon-btn:hover {
   background: var(--primary-pale);
   color: var(--primary);
+}
+
+.navbar__theme-btn {
+  font-size: 1.1rem;
 }
 
 .navbar__cart-badge {
@@ -277,7 +281,7 @@
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  background: #fff;
+  background: var(--card-bg);
   border: 1px solid #ede9e3;
   border-radius: 10px;
   box-shadow: 0 8px 28px rgba(0,0,0,0.13);
@@ -307,8 +311,8 @@
 }
 
 .navbar__dropdown-link:hover {
-  background: #faf5ef;
-  color: #c9a98a;
+  background: var(--bg-secondary);
+  color: var(--primary);
 }
 
 .navbar__logout-btn {
@@ -326,7 +330,7 @@
 }
 
 .navbar__logout-btn:hover {
-  background: #fff5f5;
+  background: var(--primary-pale);
 }
 
 .navbar__login-btn {

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
 import { useWishlist } from '../../context/WishlistContext';
+import { useTheme } from '../../context/ThemeContext';
 import SearchOverlay from '../SearchOverlay/SearchOverlay';
 import './Navbar.css';
 
@@ -17,6 +18,7 @@ function Navbar() {
   const { totalItems } = useCart();
   const { isLoggedIn, user, logout } = useAuth();
   const { totalWishlist } = useWishlist();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(function() {
     function handleScroll() {
@@ -90,6 +92,15 @@ function Navbar() {
 
           {/* Action icons */}
           <div className="navbar__actions">
+
+            {/* Theme Toggle */}
+            <button
+              className="navbar__icon-btn navbar__theme-btn"
+              aria-label="Toggle Theme"
+              onClick={toggleTheme}
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
 
             {/* Search icon — opens overlay on click */}
             <button

@@ -103,7 +103,7 @@
 
 /* card */
 .wishlist-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -124,7 +124,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: white;
+  background: var(--card-bg);
   border: none;
   font-size: 0.75rem;
   cursor: pointer;

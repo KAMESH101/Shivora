@@ -1,5 +1,5 @@
 .product-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: white;
+  background: var(--card-bg);
   color: var(--text-dark);
   border: none;
   border-radius: var(--radius-full);
@@ -107,7 +107,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: white;
+  background: var(--card-bg);
   color: var(--text-dark);
   border: none;
   display: flex;

@@ -3,6 +3,7 @@ import Hero from '../../components/Hero';
 import Categories from '../../components/Categories';
 import FeaturedProducts from '../../components/FeaturedProducts';
 import Newsletter from '../../components/Newsletter';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Home.css';
 
 const BrandBanner = () => (
@@ -15,10 +16,13 @@ const BrandBanner = () => (
   </section>
 );
 
-const PromoSection = () => (
-  <section className="promo-section">
-    <div className="container promo-section__inner">
-      <div className="promo-section__card promo-section__card--left">
+const PromoSection = () => {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
+  
+  return (
+    <section className="promo-section" ref={ref}>
+      <div className="container promo-section__inner">
+        <div className={`promo-section__card promo-section__card--left reveal-up stagger-1 ${isVisible ? 'is-visible' : ''}`}>
         <img
           src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&q=80"
           alt="Summer Sale"
@@ -30,7 +34,7 @@ const PromoSection = () => (
           <a href="/shop" className="promo-section__link">Shop Sale →</a>
         </div>
       </div>
-      <div className="promo-section__card promo-section__card--right">
+      <div className={`promo-section__card promo-section__card--right reveal-up stagger-2 ${isVisible ? 'is-visible' : ''}`}>
         <img
           src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=700&q=80"
           alt="New Arrivals"
@@ -44,7 +48,8 @@ const PromoSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 const Testimonials = () => {
   const testimonials = [
@@ -71,16 +76,18 @@ const Testimonials = () => {
     },
   ];
 
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+
   return (
-    <section className="testimonials">
+    <section className="testimonials" ref={ref}>
       <div className="container">
-        <div className="testimonials__header">
+        <div className={`testimonials__header reveal-up ${isVisible ? 'is-visible' : ''}`}>
           <p className="section-subtitle">What They Say</p>
           <h2 className="section-title">Customer Love</h2>
         </div>
         <div className="testimonials__grid">
-          {testimonials.map((t) => (
-            <div key={t.name} className="testimonial-card">
+          {testimonials.map((t, i) => (
+            <div key={t.name} className={`testimonial-card reveal-up stagger-${i + 1} ${isVisible ? 'is-visible' : ''}`}>
               <div className="testimonial-card__stars">
                 {[...Array(t.rating)].map((_, i) => (
                   <svg key={i} viewBox="0 0 24 24" fill="#f5c518" stroke="none" className="testimonial-card__star">

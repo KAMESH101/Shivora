@@ -15,12 +15,21 @@
   --bg: #fdf8f3;
   --bg-secondary: #f7efe5;
   --bg-dark: #1e1612;
+  --navbar-bg: rgba(253, 248, 243, 0.96);
+
+  /* Hero Gradients */
+  --hero-bg-1: linear-gradient(135deg, #fdf8f3 0%, #f7efe5 40%, #f0e2d4 100%);
+  --hero-bg-2: linear-gradient(135deg, #fef5ec 0%, #fae3cc 40%, #f5d0b0 100%);
+  --hero-bg-3: linear-gradient(135deg, #f8efe6 0%, #e8d5c4 40%, #dcb89f 100%);
 
   /* Text */
   --text-dark: #2a1f1a;
   --text-medium: #5c4f48;
   --text-light: #9e8e85;
   --text-white: #ffffff;
+
+  /* Cards */
+  --card-bg: #ffffff;
 
   /* Borders & Shadows */
   --border: #e8ddd3;
@@ -39,6 +48,62 @@
   --font-body: 'Poppins', sans-serif;
   --transition: 0.3s ease;
   --max-width: 1280px;
+}
+
+[data-theme="dark"] {
+  --primary: #c4856a;
+  --primary-dark: #a86e56;
+  --primary-light: #8e5a45;
+  --primary-pale: #2a1f1a;
+
+  --accent: #d4a06a;
+  --accent-dark: #a87e51;
+
+  --bg: #1a1512;
+  --bg-secondary: #241c18;
+  --bg-dark: #0f0b09;
+  --card-bg: #211a17;
+  --navbar-bg: rgba(26, 21, 18, 0.96);
+
+  --hero-bg-1: linear-gradient(135deg, #1a1512 0%, #241c18 40%, #2a1f1a 100%);
+  --hero-bg-2: linear-gradient(135deg, #1e1815 0%, #261f1b 40%, #2e241f 100%);
+  --hero-bg-3: linear-gradient(135deg, #16110e 0%, #1e1612 40%, #241c18 100%);
+
+  --text-dark: #fcf9f6;
+  --text-medium: #d4c5bb;
+  --text-light: #9e8e85;
+  --text-white: #ffffff;
+
+  --border: #382c25;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.6);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+/* Animation Utilities */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger utilities */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* Parallax utility */
+.parallax-img {
+  will-change: transform;
 }
 
 *, *::before, *::after {

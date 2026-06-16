@@ -237,9 +237,31 @@
   }
 }
 
+@media (max-width: 600px) {
+  .navbar__wishlist-btn {
+    display: none !important;
+  }
+}
+
 @media (max-width: 480px) {
+  .navbar__inner {
+    padding: 0 12px;
+  }
   .navbar__logo-text {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+  }
+  .navbar__logo-sub {
+    font-size: 0.5rem;
+    letter-spacing: 3.5px;
+  }
+  .navbar__actions {
+    gap: 4px;
+  }
+  .navbar__icon-btn,
+  .navbar__hamburger {
+    width: 36px;
+    height: 36px;
   }
 }
 

@@ -45,6 +45,14 @@ function ProductCard({ product, className = '' }) {
           className="product-card__image"
           loading="lazy"
         />
+        {product.hoverImage && (
+          <img
+            src={product.hoverImage}
+            alt={product.name}
+            className="product-card__image product-card__image--hover"
+            loading="lazy"
+          />
+        )}
 
         {/* overlay shown on hover */}
         <div className="product-card__overlay">

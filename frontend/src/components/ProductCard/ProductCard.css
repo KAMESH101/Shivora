@@ -25,13 +25,23 @@
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 0.55s ease;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   position: absolute;
   inset: 0;
 }
 
-.product-card:hover .product-card__image {
-  transform: scale(1.05);
+.product-card__image--hover {
+  opacity: 0;
+  z-index: 1;
+}
+
+@media (hover: hover) {
+  .product-card:hover .product-card__image {
+    transform: scale(1.06);
+  }
+  .product-card:hover .product-card__image--hover {
+    opacity: 1;
+  }
 }
 
 /* Badge */
@@ -59,18 +69,38 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 16px;
+  padding: 12px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transform: translateY(100%);
-  transition: transform 0.35s ease;
+  gap: 8px;
   z-index: 3;
-  background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.product-card:hover .product-card__overlay {
-  transform: translateY(0);
+[data-theme="dark"] .product-card__overlay {
+  background: rgba(33, 26, 23, 0.75);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Hover-only reveal on desktop viewports */
+@media (hover: hover) {
+  .product-card__overlay {
+    transform: translateY(101%);
+  }
+  .product-card:hover .product-card__overlay {
+    transform: translateY(0);
+  }
+}
+
+/* Statically visible on touch devices so buttons can be tapped */
+@media (hover: none), (max-width: 1023px) {
+  .product-card__overlay {
+    transform: translateY(0);
+  }
 }
 
 .product-card__action-btn {

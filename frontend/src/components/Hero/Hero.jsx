@@ -77,7 +77,7 @@ const Hero = () => {
 
       <div className="container hero__inner">
         {/* Text content */}
-        <div className="hero__content">
+        <div className="hero__content" key={`content-${slide.id}`}>
           <span className="hero__tag" style={{ color: slide.accentColor }}>
             — {slide.tag}
           </span>
@@ -121,12 +121,15 @@ const Hero = () => {
         {/* Image */}
         <div className="hero__image-wrap">
           <div className="hero__image-frame">
-            <img
-              src={slide.imgUrl}
-              alt={slide.imgAlt}
-              className="hero__image"
-              loading="eager"
-            />
+            <div className="hero__image-container">
+              <img
+                key={`img-${slide.id}`}
+                src={slide.imgUrl}
+                alt={slide.imgAlt}
+                className="hero__image"
+                loading="eager"
+              />
+            </div>
             <div className="hero__image-tag" style={{ '--accent': slide.accentColor }}>
               <span>✦ New In</span>
             </div>

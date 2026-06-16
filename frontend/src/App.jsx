@@ -29,6 +29,7 @@ import Careers from './pages/Careers/Careers';
 import Press from './pages/Press/Press';
 import Sustainability from './pages/Sustainability/Sustainability';
 import './styles/globals.css';
+import Lenis from '@studio-freight/lenis';
 
 const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 
@@ -45,6 +46,28 @@ function ScrollToTop() {
 }
 
 function App() {
+  useEffect(() => {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouchDevice) return;
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <ClerkProvider publishableKey={clerkPubKey}>
       <ThemeProvider>

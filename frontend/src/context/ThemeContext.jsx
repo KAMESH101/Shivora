@@ -41,8 +41,40 @@ export function ThemeProvider({ children }) {
     localStorage.setItem('shivora-theme', theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  const toggleTheme = (e) => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+
+    if (!document.startViewTransition) {
+      setTheme(nextTheme);
+      return;
+    }
+
+    const x = e && typeof e.clientX === 'number' ? e.clientX : window.innerWidth / 2;
+    const y = e && typeof e.clientY === 'number' ? e.clientY : window.innerHeight / 2;
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    const transition = document.startViewTransition(() => {
+      setTheme(nextTheme);
+    });
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`
+          ]
+        },
+        {
+          duration: 400,
+          easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          pseudoElement: '::view-transition-new(root)'
+        }
+      );
+    });
   };
 
   return (

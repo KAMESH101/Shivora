@@ -161,6 +161,12 @@
   position: relative;
   z-index: 1;
   box-shadow: var(--shadow-lg);
+  /* Fix Webkit/Chromium border-radius overflow clipping bug for animating children */
+  isolation: isolate;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .hero__image {

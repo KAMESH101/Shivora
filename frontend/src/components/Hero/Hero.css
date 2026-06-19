@@ -269,15 +269,17 @@
     padding: 0 16px;
     box-sizing: border-box;
     width: 100%;
+    justify-content: center;
   }
 
   .hero__image-frame {
     margin: 0 auto;
-    max-width: 100%;
+    width: 90%;
+    max-width: 340px;
   }
 
   .hero__image-container {
-    height: 400px;
+    height: 360px;
   }
 
   .hero__sub {

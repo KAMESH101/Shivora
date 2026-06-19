@@ -259,6 +259,15 @@
   .hero__image-wrap {
     display: flex;
     margin-top: 20px;
+    margin-right: 0;
+    padding: 0 16px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .hero__image-frame {
+    margin: 0 auto;
+    max-width: 100%;
   }
 
   .hero__image-container {

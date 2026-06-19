@@ -37,7 +37,7 @@ function ProductCard({ product, className = '' }) {
     <div className={`product-card ${className}`} onClick={handleCardClick}>
       <div className="product-card__image-wrap">
         {discount && <span className="product-card__badge">-{discount}%</span>}
-        {product.isNew && <span className="product-card__badge product-card__badge--new">New</span>}
+        {product.isNewArrival && <span className="product-card__badge product-card__badge--new">New</span>}
 
         <img
           src={product.image}

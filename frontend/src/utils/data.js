@@ -12,7 +12,7 @@ export const products = [
     colors: ['#c9a98a', '#6da9b5', '#1a1a1a'],
     rating: 4,
     reviews: 128,
-    isNew: false,
+    isNewArrival: false,
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export const products = [
     colors: ['#f0ebe4', '#8b7355', '#1a1a1a'],
     rating: 5,
     reviews: 64,
-    isNew: true,
+    isNewArrival: true,
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ export const products = [
     colors: ['#e8f4f7', '#d4a5a5', '#6da9b5'],
     rating: 4,
     reviews: 95,
-    isNew: false,
+    isNewArrival: false,
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ export const products = [
     colors: ['#c9a98a', '#e8d5b7', '#6da9b5'],
     rating: 5,
     reviews: 203,
-    isNew: true,
+    isNewArrival: true,
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ export const products = [
     colors: ['#1a1a1a', '#5b5b5b', '#f0ebe4'],
     rating: 4,
     reviews: 77,
-    isNew: false,
+    isNewArrival: false,
   },
   {
     id: 6,
@@ -77,7 +77,7 @@ export const products = [
     colors: ['#c9a98a', '#1a1a1a', '#6da9b5'],
     rating: 5,
     reviews: 141,
-    isNew: true,
+    isNewArrival: true,
   },
   {
     id: 7,
@@ -90,7 +90,7 @@ export const products = [
     colors: ['#4a6b8a', '#8899aa', '#1a1a1a'],
     rating: 4,
     reviews: 89,
-    isNew: false,
+    isNewArrival: false,
   },
   {
     id: 8,
@@ -103,7 +103,7 @@ export const products = [
     colors: ['#fff', '#f0ebe4', '#6da9b5'],
     rating: 4,
     reviews: 52,
-    isNew: false,
+    isNewArrival: false,
   },
 ];
 

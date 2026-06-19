@@ -101,7 +101,7 @@ function ProductDetail() {
           {/* main image */}
           <div className="pd-main-img-wrap">
             {discount && <span className="pd-badge">-{discount}%</span>}
-            {product.isNew && <span className="pd-badge pd-badge--new">New</span>}
+            {product.isNewArrival && <span className="pd-badge pd-badge--new">New</span>}
             <img
               src={images[selectedImage]}
               alt={product.name}

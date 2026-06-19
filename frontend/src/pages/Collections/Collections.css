@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   gap: 48px;
-  padding-bottom: 80px;
+  padding-bottom: 120px;
 }
 
 /* Featured card */
@@ -36,6 +36,7 @@
 .collection-featured__img-wrap {
   overflow: hidden;
   aspect-ratio: 4/5;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
 }
 
 .collection-featured__img {
@@ -223,6 +224,7 @@
   min-height: 400px;
   display: flex;
   align-items: center;
+  margin-bottom: 80px;
 }
 
 .lookbook-cta__bg {
